@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Materials/ArmMaterial.tres" type="Material" id=1]
+[ext_resource path="res://Materials/HourIndicatorMaterial.tres" type="Material" id=2]
+[ext_resource path="res://Clock.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.701961, 0, 0, 1 )
+
+[node name="Main" type="Spatial"]
+
+[node name="Clock" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178098, -0.0654844, -0.0480361 )
+script = ExtResource( 3 )
+
+[node name="Face" type="CSGCylinder" parent="Clock"]
+transform = Transform( 0.543145, 0, 0, 0, -2.37416e-08, -0.543145, 0, 0.543145, -2.37416e-08, 0, 0, 0 )
+radius = 10.0
+height = 0.2
+sides = 20
+
+[node name="Hour12" type="CSGBox" parent="Clock"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour1" type="CSGBox" parent="Clock"]
+transform = Transform( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 2, 3.464, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour2" type="CSGBox" parent="Clock"]
+transform = Transform( 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 3.464, 2, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour3" type="CSGBox" parent="Clock"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4, 0, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour4" type="CSGBox" parent="Clock"]
+transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 3.464, -2, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour5" type="CSGBox" parent="Clock"]
+transform = Transform( 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 2, -3.464, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour6" type="CSGBox" parent="Clock"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour7" type="CSGBox" parent="Clock"]
+transform = Transform( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -2, -3.464, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour8" type="CSGBox" parent="Clock"]
+transform = Transform( 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -3.464, -2, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour9" type="CSGBox" parent="Clock"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4, 0, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour10" type="CSGBox" parent="Clock"]
+transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, -3.464, 2, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="Hour11" type="CSGBox" parent="Clock"]
+transform = Transform( 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -2, 3.464, 0.25 )
+width = 0.5
+height = 1.0
+depth = 0.1
+material = ExtResource( 2 )
+
+[node name="HoursArmPivot" type="Spatial" parent="Clock"]
+
+[node name="HoursArm" type="CSGBox" parent="Clock/HoursArmPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.25 )
+width = 0.3
+height = 2.5
+depth = 0.1
+material = ExtResource( 1 )
+
+[node name="MinutesArmPivot" type="Spatial" parent="Clock"]
+
+[node name="MinutesArm" type="CSGBox" parent="Clock/MinutesArmPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.35 )
+width = 0.2
+height = 4.0
+depth = 0.1
+material = ExtResource( 1 )
+
+[node name="SecondsArmPivot" type="Spatial" parent="Clock"]
+
+[node name="SecondsArm" type="CSGBox" parent="Clock/SecondsArmPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0.45 )
+width = 0.1
+height = 5.0
+depth = 0.1
+material = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11 )
+visible = false
